@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" type="text/css" href="../CSS/theme.css"/>
+    </head>
+    <body>
+        <script src="../JS/utils.js"></script>
+        <script src="../JS/home.js"></script>
+
+        <header>
+            <nav class="navBar">
+                <ul>
+                    <li>
+                        <a href="./home.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="./destinations.html">Destinations</a>
+                    </li>
+                    <li>
+                        <a href="./language.html">Languages</a>
+                    </li>
+                </ul>
+            </nav>
+            <h1>Home</h1>
+        </header>
+
+        <picture>
+            <source media="(max-width:650px)" srcset="../img/title_2.jpg">
+            <img id="titleImage" src="../img/title_1.jpg" alt="Flowers" style="width:auto;">
+        </picture>
+
+        <section id="homeDescription">
+            <h2 style="text-align: center;">Travel site</h2> <br>
+            Welcome to our travel site! On our home page you'll find some interesting articles related to this topic. Check out our destinations page as well. Bienvenue sur notre site de voyage! Sur notre page d'accueil, vous trouverez des articles intéressants liés à ce sujet. Consultez également notre page de destinations. Willkommen auf unserer Reiseseite! Auf unserer Homepage finden Sie einige interessante Artikel zu diesem Thema. Schauen Sie sich auch unsere Zielseite an.
+        </section>
+
+        <section id="grd">
+
+        </section>
+
+        <footer>
+            &#169; - Devschool 2020
+        </footer>
+
+        <script>
+            createArticles(data, 'home');
+        </script>
+
+    </body>
+</html>
