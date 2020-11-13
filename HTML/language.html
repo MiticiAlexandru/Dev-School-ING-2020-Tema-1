@@ -25,35 +25,41 @@
         </header>
 
         <section id="grd">
-            <form action="./language.html" class="art" id="languageForm">
-                <h2 class="languageFormTitle">Change the language</h2> <br> <br> <p class="languageFormTitle">Available languages:</p>
-                <div class="flexBreak"></div>
-                <INPUT TYPE="Radio" class="languageFormElement" Name="language" Value="EN" Checked>English
-                <div class="flexBreak"></div>
-                <INPUT TYPE="Radio" class="languageFormElement" Name="language" Value="FR">French
-                <div class="flexBreak"></div>
-                <INPUT TYPE="Radio" class="languageFormElement" Name="language" Value="GR">German
-                <div class="flexBreak"></div>
-                <INPUT TYPE="Radio" class="languageFormElement" Name="language" Value="IT">Italian
-                <div class="flexBreak"></div>
-                <INPUT TYPE="Radio" class="languageFormElement" Name="language" Value="SP">Spanish
-                <div class="flexBreak"></div>
-                <INPUT TYPE="Radio" class="languageFormElement" Name="language" Value="JP">Japanese
-                <div class="flexBreak"></div>
-                <INPUT TYPE="Radio" class="languageFormElement" Name="language" Value="MA">Mandarin
-                <div class="flexBreak"></div>
-                <INPUT TYPE="Radio" class="languageFormElement" Name="language" Value="HI">Hindi
-                <div class="flexBreak"></div>
-                <INPUT TYPE="Radio" class="languageFormElement" Name="language" Value="AR">Arabic
-                <div class="flexBreak"></div>
+            <form action="./language.html" class="languageForm" id="languageForm">
+                <h2 class="languageFormTitle">Change the language</h2> <p class="languageFormTitle">Available languages:</p>
+                <INPUT TYPE="Radio" class="languageFormElement" Name="language" Value="en" Checked>English
+                <INPUT TYPE="Radio" class="languageFormElement" Name="language" Value="fr">French
+                <INPUT TYPE="Radio" class="languageFormElement" Name="language" Value="de">German
+                <INPUT TYPE="Radio" class="languageFormElement" Name="language" Value="it">Italian
+                <INPUT TYPE="Radio" class="languageFormElement" Name="language" Value="es">Spanish
+                <INPUT TYPE="Radio" class="languageFormElement" Name="language" Value="ja">Japanese
+                <INPUT TYPE="Radio" class="languageFormElement" Name="language" Value="zh-CN">Chinese
+                <INPUT TYPE="Radio" class="languageFormElement" Name="language" Value="hi">Hindi
+                <INPUT TYPE="Radio" class="languageFormElement" Name="language" Value="ar">Arabic
                 <p></p>
                 <input type="submit" class="languageFormSubmit" value="Change">
             </form>
+
+            <!--
+            <div id="google_translate_element hidden"></div>
+
+            <script type="text/javascript">
+            function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+            }
+            </script>
+
+            <script type="text/javascript" src="../JS/f.js"></script>
+            -->
         </section>
 
         <footer>
             &#169; - Devschool 2020
         </footer>
+
+        <script>
+            window.onload = changeLanguage();
+        </script>
 
     </body>
 </html>
