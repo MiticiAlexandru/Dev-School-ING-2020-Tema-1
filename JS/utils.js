@@ -49,6 +49,7 @@ function changeLanguage() {
     if(sessionStorage.lang && sessionStorage.lang!="en") {
         // We need to translate:
         const lang=sessionStorage.lang;
+        // TODO: figure out how to translate all pages seamlessly and remember language selection for etire section
         
     }
 }
