@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
         <title>Home</title>
         <link rel="stylesheet" type="text/css" href="../CSS/theme.css"/>
     </head>
@@ -27,7 +28,7 @@
 
         <picture>
             <source media="(max-width:650px)" srcset="../img/title_2.jpg">
-            <img id="titleImage" src="../img/title_1.jpg" alt="Flowers" style="width:auto;">
+            <img id="titleImage" src="../img/title_1.jpg" alt="Title image" style="width:auto;">
         </picture>
 
         <section id="homeDescription">
@@ -41,13 +42,23 @@
 
         <div id="imgFullscreenContainer"></div>
 
+        <div id="google_translate_element" hidden></div>
+
+        <script type="text/javascript">
+        function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+        </script>
+
+        <script type="text/javascript" src="../JS/f.js"></script>
+
         <footer>
             &#169; - Devschool 2020
         </footer>
 
         <script>
             createArticles(data, 'home');
-            window.onload = changeLanguage();
+            window.onload = changeLanguageInit();
         </script>
 
     </body>
