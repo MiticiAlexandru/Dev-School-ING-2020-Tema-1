@@ -45,7 +45,7 @@ function imageFullscreen(close, image) {
         elem.style.display = "none";
 }
 
-function changeLanguageInit(isLanguagePage) {
+function changeLanguageInit(frame, isLanguagePage) {
     if(window.location.search) {
         // Check if language was changed:
         const urlParams = new URLSearchParams(window.location.search);
@@ -61,22 +61,21 @@ function changeLanguageInit(isLanguagePage) {
                     list[i].checked = true;
             }
         }
-        changeLanguage(sessionStorage.lang);
+        changeLanguage(frame, sessionStorage.lang);
     }
 }
 
-function changeLanguage(lang) {
+function changeLanguage(frame, lang) {
     let ok = true;
 
-    if(document.getElementsByTagName("IFRAME").length > 0) {
-        var iframe = document.getElementsByTagName("IFRAME")[0].contentWindow.document.body;
+    setTimeout(() => {
+        console.log(frame.contentWindow.document.body.children[0].children[0]);
+        var iframe = frame.contentWindow.document.body;
         var googleTranslateMenu = iframe.children[0].children[0].children[0].children[0].children;
         if(googleTranslateMenu)
             for(let i=0; ok && i<googleTranslateMenu.length; i=i+2)
                 for(let j=0; ok && j<googleTranslateMenu[i].childElementCount; j++)
                     if(googleTranslateMenu[i].children[j].children[0].children[1].innerHTML == languageTable[lang])
                         googleTranslateMenu[i].children[j].click();
-    } else {
-        console.log("iframe did not load.");
-    }
+    }, 1000);
 }

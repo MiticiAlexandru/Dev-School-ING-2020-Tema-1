@@ -58,7 +58,10 @@
 
         <script>
             createArticles(data, 'home');
-            window.onload = changeLanguageInit();
+            window.onload = () => {
+                var frame = document.querySelector("iframe");
+                frame.onload = changeLanguageInit(frame, true);
+            }
         </script>
 
     </body>

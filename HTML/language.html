@@ -57,7 +57,10 @@
         </footer>
 
         <script>
-            window.onload = changeLanguageInit(true);
+            window.onload = () => {
+                var frame = document.querySelector("iframe");
+                frame.onload = changeLanguageInit(frame, true);
+            }
         </script>
 
     </body>
