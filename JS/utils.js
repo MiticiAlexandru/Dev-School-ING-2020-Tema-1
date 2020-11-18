@@ -45,22 +45,24 @@ function imageFullscreen(close, image) {
         elem.style.display = "none";
 }
 
-function changeLanguageInit() {
+function changeLanguageInit(isLanguagePage) {
     if(window.location.search) {
         // Check if language was changed:
         const urlParams = new URLSearchParams(window.location.search);
         const lang = urlParams.get('language');
         sessionStorage.lang = lang;
-
-        var list = document.getElementsByClassName("languageFormElement");
-        for(let i = 0; i < list.length; i++) {
-            if(list[i].value == lang)
-                list[i].checked = true;
-        }
     }
     // We need to translate:
-    if(sessionStorage.lang && sessionStorage.lang!="en")
+    if(sessionStorage.lang && sessionStorage.lang!="en") {
+        if(isLanguagePage) {
+            var list = document.getElementsByClassName("languageFormElement");
+            for(let i = 0; i < list.length; i++) {
+                if(list[i].value == sessionStorage.lang)
+                    list[i].checked = true;
+            }
+        }
         changeLanguage(sessionStorage.lang);
+    }
 }
 
 function changeLanguage(lang) {
