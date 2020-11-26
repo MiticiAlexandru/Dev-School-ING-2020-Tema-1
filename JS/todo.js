@@ -4,50 +4,25 @@ import {
     css
 } from 'https://unpkg.com/lit-element@2.4.0/lit-element.js?module';
 
-class Todos extends LitElement {
+class Todo extends LitElement {
     static get styles() {
         return css`
             .todo-checked { text-decoration: line-through; }
         `;
     }
-    
+
     static get properties() {
         return {
-            todos: { type: Array },
-            title: { type: String }
-        }
-    }
-
-    constructor() {
-        super();
-        this.title = 'My list';
-        this.todos = [
-            {
-                name: 'Task 1',
-                done: true
-            },
-            {
-                name: 'Task 2',
-                done: true
-            },
-            {
-                name: 'Task 3',
-                done: false
-            }
-        ];
+            name: {type: String},
+            done: {type: Boolean}
+        };
     }
 
     render() {
         return html`
-            <h2>${this.title}</h2>
-            <ul style="list-style-type:none;">
-                ${this.todos.map((todo, index) => {
-                    return html`
-                        <li class="${todo.done ? "todo-checked" : ""}">
-                            <input type="checkbox" ?checked=${todo.done} @click=${(event) => this.handleChecked(event, index)}> ${todo.name}
-                        </li>`;
-                })}
-            </ul>
+            <div class="${this.done ? "todo-checked" : ""}">
+                <input type="checkbox" ?checked=${this.done} @click=${(event) => this.handleChecked(event, index)}> ${this.name}
+            </div>
         `;
     }
 
@@ -58,4 +33,4 @@ class Todos extends LitElement {
     }
 }
 
-customElements.define('my-todos', Todos);
+export default customElements.define("my-todo", Todo);
