@@ -14,7 +14,8 @@ class Navigation extends HTMLElement {
         <li>
             <a href="./language.html">Languages</a>
         </li>
-        </ul></div>`;
+        </ul></div>
+        <slot name="title"></slot>`;
         _style.innerHTML = `.nav ul {
             width: calc(100% - 40px);
             list-style-type: none;
@@ -60,6 +61,26 @@ class Navigation extends HTMLElement {
         this._shadowRoot = this.attachShadow({ mode: 'open' });
         this._shadowRoot.appendChild(_nav);
         this._shadowRoot.appendChild(_style);
+    }
+
+    static get observedAttributes() {
+        return ['color'];
+    }
+
+    attributeChangedCallback(name, oldVal, newVal) {
+        console.log('Changed color `' + name + '` from ' + oldVal + ' to ' + newVal);
+    }
+
+    connectedCallback() {
+        console.log("Hello from connected callback");
+    }
+
+    disconnectedCallback() {
+        console.log("Hello from disconnected callback");
+    }
+
+    adoptedCallback() {
+        console.log("Hello from adopted callback");
     }
 }
 
