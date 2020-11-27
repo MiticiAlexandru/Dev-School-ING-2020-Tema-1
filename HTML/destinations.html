@@ -6,9 +6,9 @@
         <link rel="stylesheet" type="text/css" href="../CSS/theme.css"/>
     </head>
     <body>
+        <script type="module" src="../JS/Articles/articlesDest.js"></script>
         <script src="../JS/utils.js"></script>
-        <script src="../JS/destinations.js"></script>
-        <script src="../JS/navigation.js"></script>
+        <script type="module" src="../JS/navigation.js"></script>
 
         <header>
             <navigation-element>
@@ -16,11 +16,14 @@
             </navigation-element>
         </header>
 
-        <section id="grd">
-            
-        </section>
+        <art-container id="grd">
 
-        <div id="imgFullscreenContainer"></div>
+        </art-container>
+
+        <div id="imgFullscreenContainer">
+            <button id="imgFullscreenButton" class="imgFullscreenButtonClose"
+            onClick="closeFullscreen()"></button>
+        </div>
 
         <div id="google_translate_element" hidden></div>
 
@@ -33,11 +36,10 @@
         <script type="text/javascript" src="../JS/f.js"></script>
 
         <footer>
-            &#169; - Devschool 2020
+            <my-footer></my-footer>
         </footer>
 
         <script>
-            createArticles(data, 'destination');
             window.onload = () => {
                 var frame = document.querySelector("iframe");
                 frame.onload = changeLanguageInit(frame, true);

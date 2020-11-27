@@ -1,4 +1,4 @@
-data = [
+var data = [
     {
         "title": "Lorem ipsum",
         "link": "https://en.wikipedia.org/wiki/Paris",
@@ -42,3 +42,5 @@ data = [
         "content": "Aliquam varius sem leo, eget feugiat elit hendrerit sit amet. Proin eu egestas sem. Etiam a tellus nec lacus maximus accumsan sit amet nec neque. Nunc luctus augue nec turpis tempus volutpat. Mauris porta eu dolor congue pellentesque. Mauris pharetra pellentesque sapien, vitae aliquet justo sodales ac. Ut laoreet iaculis velit, quis imperdiet leo placerat vel. Maecenas ut vulputate turpis. Integer volutpat porta justo, ut pulvinar ligula imperdiet eu."
     }
 ];
+
+export default data;

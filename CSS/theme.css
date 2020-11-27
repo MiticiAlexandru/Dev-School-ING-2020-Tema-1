@@ -29,19 +29,6 @@ header {
     background-color: white;
 }
 
-footer {
-    width: 95%;
-    left: 0;
-    bottom: 0;
-    padding-left: 5%;
-    padding-top: 1.5%;
-    padding-bottom: 1.5%;
-
-    font-size: 1.25vw;
-
-    background-color: white;
-}
-
 h1 {
     margin-top: 0;
     margin-bottom: 0;
@@ -74,56 +61,6 @@ h2 {
 #grd {
     padding-top: 1.375%;
     padding-bottom: 1.375%;
-}
-
-.art {
-    background-color: white;
-    display: flex;
-
-    padding: 1.25%;
-    border-radius: 12px;
-    margin-top: 1.375%;
-    margin-bottom: 1.375%;
-    margin-left: 2.75%;
-    margin-right: 2.75%;
-}
-
-.art_home_img {
-    flex: 5;
-}
-
-.art_home_text_0 {
-    flex-grow: 4;
-    box-sizing: border-box;
-    padding-left: 2%;
-    flex-basis: 0;
-}
-
-.art_home_text_1 {
-    flex-grow: 4;
-    box-sizing: border-box;
-    padding-right: 2%;
-    flex-basis: 0;
-}
-
-.art_destination_img {
-    flex: 1;
-}
-
-.art_destination_text {
-    flex-grow: 5;
-    box-sizing: border-box;
-    padding-left: 2%;
-    flex-basis: 0;
-}
-
-.artImg {
-    width: 100%;
-    height: auto;
-    vertical-align: middle;
-    object-fit: contain;
-    left: 0;
-    top: 0;
 }
 
 .languageForm {

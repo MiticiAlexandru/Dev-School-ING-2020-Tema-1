@@ -10,39 +10,8 @@ const languageTable = {
     "ar": "Arabic"
 };
 
-function createArticles(list, type) {
-    var artType = 0;
-    var container = document.getElementById('grd');
-    var articles = '';
-    list.forEach(art => {
-        articles = articles + createArticle(art, type, artType);
-        artType = 1 - artType;
-    });
-    container.innerHTML = articles;
-}
-
-function createArticle(art, pageType, artType) {
-    var article;
-    if(pageType == "destination") {
-        art.content = art.content + ' <br> <br> <a href="' + art.link + '"  target="_blank" class="link">Click here for more info...</a>';
-        article = `<article class="art art_destination"><div class="art_destination_img"> <img class="artImg" src="../img/` + art.image + `" alt="` + art.image + `" onClick="imageFullscreen(false, '` + art.image + `')"></img> </div><div class="art_destination_text"><h2>` + art.title + `</h2> <br>` + art.content + `</div></article>`;
-    } else {
-        art.title = '<h2>' + art.title + '</h2> <h3>' + art.subtitle + '</h3>';
-        if(artType == 0)
-            article = `<article class="art art_home0"><div class="art_home_img"> <img class="artImg" src="../img/` + art.image + `" alt="` + art.image + `" onClick="imageFullscreen(false, '` + art.image + `')"></img> </div><div class="art_home_text_0">` + art.title + art.content + `</div></article>`;
-        else
-            article = `<article class="art art_home1"><div class="art_home_text_1">` + art.title + art.content + `</div><div class="art_home_img"> <img class="artImg" src="../img/` + art.image + `" alt="` + art.image + `" onClick="imageFullscreen(false, '` + art.image + `')"></img> <div></article>`;
-    }
-    return article;
-}
-
-function imageFullscreen(close, image) {
-    var elem = document.getElementById("imgFullscreenContainer");
-    if(close == false) {
-        elem.innerHTML = `<button class="imgFullscreenButtonClose" onClick="imageFullscreen(true)"><img class="imgFullscreen" src="../img/` + image + `" alt="` + image + `"></img></button>`;
-        elem.style.display = "block";
-    } else
-        elem.style.display = "none";
+function closeFullscreen() {
+    document.getElementById('imgFullscreenContainer').style.display = 'none';
 }
 
 function changeLanguageInit(frame, isLanguagePage) {

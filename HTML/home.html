@@ -6,9 +6,9 @@
         <link rel="stylesheet" type="text/css" href="../CSS/theme.css"/>
     </head>
     <body>
+        <script type="module" src="../JS/Articles/articlesHome.js"></script>
         <script src="../JS/utils.js"></script>
-        <script src="../JS/home.js"></script>
-        <script src="../JS/navigation.js"></script>
+        <script type="module" src="../JS/navigation.js"></script>
 
         <header>
             <navigation-element>
@@ -26,11 +26,14 @@
             <span translate="no"> Welcome to our travel site! On our home page you'll find some interesting articles related to this topic. Check out our destinations page as well. Bienvenue sur notre site de voyage! Sur notre page d'accueil, vous trouverez des articles intéressants liés à ce sujet. Consultez également notre page de destinations. Willkommen auf unserer Reiseseite! Auf unserer Homepage finden Sie einige interessante Artikel zu diesem Thema. Schauen Sie sich auch unsere Zielseite an. </span>
         </section>
 
-        <section id="grd">
+        <art-container id="grd">
 
-        </section>
+        </art-container>
 
-        <div id="imgFullscreenContainer"></div>
+        <div id="imgFullscreenContainer">
+            <button id="imgFullscreenButton" class="imgFullscreenButtonClose"
+            onClick="closeFullscreen()"></button>
+        </div>
 
         <div id="google_translate_element" hidden></div>
 
@@ -43,11 +46,10 @@
         <script type="text/javascript" src="../JS/f.js"></script>
 
         <footer>
-            &#169; - Devschool 2020
+            <my-footer></my-footer>
         </footer>
 
         <script>
-            createArticles(data, 'home');
             window.onload = () => {
                 var frame = document.querySelector("iframe");
                 frame.onload = changeLanguageInit(frame, true);
