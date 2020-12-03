@@ -13,23 +13,54 @@ class Todo extends LitElement {
 
     static get properties() {
         return {
+            myid: {type: Number},
             name: {type: String},
-            done: {type: Boolean}
+            done: {type: Boolean},
+            state: {type: String}
         };
     }
 
     render() {
         return html`
             <div class="${this.done ? "todo-checked" : ""}">
-                <input type="checkbox" ?checked=${this.done} @click=${(event) => this.handleChecked(event, index)}> ${this.name}
+                ${this.state=='editing'?
+                    html`<input id="newName" type="text" value=${this.name}>
+                        <button @click="${this.handleSave}">Save</button>
+                        <button @click="${this.handleCancel}">Cancel</button>`
+                    : html`
+                        <input type="checkbox" ?checked=${this.done} @click=${(event) => this.handleCheckboxClicked(event)}> ${this.name}
+                        ${this.name}
+                        <button @click="${this.handleEditClick}">Edit</button>`}
             </div>
         `;
     }
 
-    handleChecked(event, index) {
-        const newTodos = [...this.todos];
-        newTodos[index].done = event.target.checked;
-        this.todos = newTodos;
+    handleEditClick(event) {
+        this.state = 'editing';
+    }
+
+    handleCancel(event) {
+        
+    }
+
+    handleSave(event) {
+        console.log(event);
+        this.state = '';
+        this.dispatchEvent(new CustomEvent('changeName', {
+            detail: {
+                name: this.shadowRoot.querySelector("#newName").value,
+                myid: this.myid
+            }
+        }));
+    }
+
+    handleCheckboxClicked(event) {
+        this.dispatchEvent(new CustomEvent('checkboxClickEvent', {
+            detail: {
+                myid: this.myid,
+                done: event.target.checked
+            }
+        }));
     }
 }
 
