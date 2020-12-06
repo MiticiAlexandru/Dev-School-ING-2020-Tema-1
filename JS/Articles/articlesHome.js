@@ -5,7 +5,6 @@ import {
     unsafeCSS
 } from 'https://unpkg.com/lit-element@2.4.0/lit-element.js?module';
 
-import * as homeData from "./home.js";
 import style from './articleStyle.js';
 import "./article.js";
 
@@ -22,7 +21,7 @@ class Articles extends LitElement {
 
     constructor() {
         super();
-        this.articles = homeData.default;
+        this.articles = [];
     }
 
     render() {
@@ -39,6 +38,14 @@ class Articles extends LitElement {
                 `;
             })
         }`;
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+
+        fetch('https://devschool-2020.firebaseio.com/alexandru-mitici/home.json').then((response) => {
+            response.json().then((data) => this.articles = data["-MNste_K-ry7UK3c6X7k"].data);
+        });
     }
 }
 
