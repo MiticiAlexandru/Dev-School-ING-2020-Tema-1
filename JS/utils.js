@@ -48,5 +48,3 @@ function changeLanguage(frame, lang) {
                         googleTranslateMenu[i].children[j].click();
     }, 1000);
 }
-
-export default { changeLanguage, changeLanguageInit, closeFullscreen, languageTable }

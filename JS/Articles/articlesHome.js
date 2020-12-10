@@ -3,7 +3,7 @@ import {
     html,
     css,
     unsafeCSS
-} from 'lit-element';
+} from 'https://unpkg.com/lit-element@2.4.0/lit-element.js?module';
 
 import style from './articleStyle.js';
 import "./article.js";
