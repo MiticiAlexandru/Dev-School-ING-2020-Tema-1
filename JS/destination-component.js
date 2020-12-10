@@ -6,33 +6,24 @@ import {
 
 import './Articles/articlesHome.js';
 import './Articles/articlesDest.js';
-import './navigation';
-import './footer';
 import axios from 'axios';
 
-class MainComponent extends LitElement {
+class DestComponent extends LitElement {
     render() {
         return html`
+        <script type="module" src="../JS/Articles/articlesDest.js"></script>
+        <script src="../JS/utils.js"></script>
+        <script type="module" src="../JS/navigation.js"></script>
 
         <header>
             <navigation-element>
-                <h1 slot="title">Home</h1>
+                <h1 slot="title">Destinations</h1>
             </navigation-element>
         </header>
 
-        <picture>
-            <source media="(max-width:650px)" srcset="../img/title_2.jpg">
-            <img id="titleImage" src="../img/title_1.jpg" alt="Title image" style="width:auto;">
-        </picture>
+        <art-container-dest id="grd">
 
-        <section id="homeDescription">
-            <h2 style="text-align: center;">Travel site</h2> <br>
-            <span translate="no"> Welcome to our travel site! On our home page you'll find some interesting articles related to this topic. Check out our destinations page as well. Bienvenue sur notre site de voyage! Sur notre page d'accueil, vous trouverez des articles intéressants liés à ce sujet. Consultez également notre page de destinations. Willkommen auf unserer Reiseseite! Auf unserer Homepage finden Sie einige interessante Artikel zu diesem Thema. Schauen Sie sich auch unsere Zielseite an. </span>
-        </section>
-
-        <art-container id="grd">
-
-        </art-container>
+        </art-container-dest>
 
         <div id="imgFullscreenContainer">
             <button id="imgFullscreenButton" class="imgFullscreenButtonClose"
@@ -47,6 +38,8 @@ class MainComponent extends LitElement {
         }
         </script>
 
+        <script type="text/javascript" src="../JS/f.js"></script>
+
         <footer>
             <my-footer></my-footer>
         </footer>
@@ -57,6 +50,7 @@ class MainComponent extends LitElement {
                 frame.onload = changeLanguageInit(frame, true);
             }
         </script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         `;
     }
 
@@ -223,4 +217,4 @@ class MainComponent extends LitElement {
     }
 }
 
-export default customElements.define('main-component', MainComponent);
+export default customElements.define('dest-component', DestComponent);

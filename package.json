@@ -28,6 +28,7 @@
     "webpack-merge": "^5.5.0"
   },
   "dependencies": {
+    "@vaadin/router": "^1.7.2",
     "axios": "^0.21.0",
     "copy-webpack-plugin": "^7.0.0",
     "lit-element": "^2.4.0"

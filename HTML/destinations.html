@@ -6,46 +6,6 @@
         <link rel="stylesheet" type="text/css" href="../CSS/theme.css"/>
     </head>
     <body>
-        <script type="module" src="../JS/Articles/articlesDest.js"></script>
-        <script src="../JS/utils.js"></script>
-        <script type="module" src="../JS/navigation.js"></script>
-
-        <header>
-            <navigation-element>
-                <h1 slot="title">Destinations</h1>
-            </navigation-element>
-        </header>
-
-        <art-container-dest id="grd">
-
-        </art-container-dest>
-
-        <div id="imgFullscreenContainer">
-            <button id="imgFullscreenButton" class="imgFullscreenButtonClose"
-            onClick="closeFullscreen()"></button>
-        </div>
-
-        <div id="google_translate_element" hidden></div>
-
-        <script type="text/javascript">
-        function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-        }
-        </script>
-
-        <script type="text/javascript" src="../JS/f.js"></script>
-
-        <footer>
-            <my-footer></my-footer>
-        </footer>
-
-        <script>
-            window.onload = () => {
-                var frame = document.querySelector("iframe");
-                frame.onload = changeLanguageInit(frame, true);
-            }
-        </script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
+        <dest-componenet></dest-componenet>
     </body>
 </html>
