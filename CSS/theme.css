@@ -3,6 +3,8 @@
     --gray2: rgb(218, 218, 218);
     --gray3: rgb(245, 245, 245);
 
+    --themeLightGreen: rgba(64, 247, 223);
+    --themeLightBlue: rgba(64, 177, 247);
     --themeRed: rgba(222, 52, 92);
     --themeBrown: rgba(147, 36, 50);
     --themeViolet: rgba(60, 24, 116);
@@ -14,7 +16,7 @@ body {
     margin: 0;
     color: var(--gray1);
     font-family: Verdana;
-    background-image: linear-gradient(to top right, var(--themeRed), var(--themeViolet));
+    background-image: linear-gradient(to top right, var(--themeLightGreen), var(--themeDarkBlue));
     background-attachment: fixed;
 }
 

@@ -3,7 +3,7 @@ import {
     html,
     css,
     unsafeCSS
-} from 'https://unpkg.com/lit-element@2.4.0/lit-element.js?module';
+} from 'lit-element';
 
 import style from './articleStyle.js';
 import "./article.js";
@@ -48,4 +48,4 @@ class Articles extends LitElement {
     }
 }
 
-customElements.define('art-container', Articles);
+customElements.define('art-container-dest', Articles);
