@@ -5,6 +5,8 @@ import {
     unsafeCSS
 } from 'lit-element';
 
+import style from './Articles/articleStyle.js';
+
 class Footer extends LitElement {
     static get styles() {
         return css`${unsafeCSS(style.styleFooter)}`;

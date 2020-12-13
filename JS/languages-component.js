@@ -1,14 +1,24 @@
-<!DOCTYPE HTML>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Language</title>
-        <link rel="stylesheet" type="text/css" href="../CSS/theme.css"/>
-    </head>
-    <body>
-        <script type="module" src="../JS/createArticles.js"></script>
-        <script src="../JS/utils.js"></script>
-        <script type="module" src="../JS/navigation.js"></script>
+import {
+    LitElement,
+    html,
+    css,
+    unsafeCSS
+} from 'lit-element';
+
+import './navigation';
+import './footer';
+import './utils';
+import './f';
+import style from './Articles/articleStyle.js';
+
+class LangComponent extends LitElement {
+    static get styles() {
+        return css`${unsafeCSS(style.styleRoot)}`;
+    }
+
+    render() {
+        return html`
+        <div id="main-root">
 
         <header>
             <navigation-element>
@@ -17,7 +27,7 @@
         </header>
 
         <section id="grd">
-            <form action="./language.html" class="languageForm" id="languageForm">
+            <form action="./language" class="languageForm" id="languageForm">
                 <h2 class="languageFormTitle">Change the language</h2> <p class="languageFormTitle">Available languages:</p>
                 <INPUT TYPE="Radio" class="languageFormElement" Name="language" Value="en" Checked>English
                 <INPUT TYPE="Radio" class="languageFormElement" Name="language" Value="fr">French
@@ -29,7 +39,7 @@
                 <INPUT TYPE="Radio" class="languageFormElement" Name="language" Value="hi">Hindi
                 <INPUT TYPE="Radio" class="languageFormElement" Name="language" Value="ar">Arabic
                 <p></p>
-                <input type="submit" class="languageFormSubmit" value="Change">
+                <input type="submit" class="languageFormSubmit" value="Change" disabled>
             </form>
 
             <div id="google_translate_element" hidden></div>
@@ -39,8 +49,6 @@
             new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
             }
             </script>
-
-            <script type="text/javascript" src="../JS/f.js"></script>
         </section>
 
         <footer>
@@ -53,7 +61,10 @@
                 frame.onload = changeLanguageInit(frame, true);
             }
         </script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    </body>
-</html>
+        </div>
+        `;
+    }
+}
+
+export default customElements.define('lang-component', LangComponent);
