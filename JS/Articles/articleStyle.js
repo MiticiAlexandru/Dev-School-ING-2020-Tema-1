@@ -41,13 +41,6 @@ const styleRoot = `
         background-color: var(--main);
     }
 
-    h1 {
-        margin-top: 0;
-        margin-bottom: 0;
-        padding-bottom: 0.25%;
-        color: var(--themeDarkBlue);
-    }
-
     h2 {
         margin-top: 0;
         margin-bottom: 0;
@@ -157,9 +150,36 @@ const styleRoot = `
         left: 0;
         top: 0;
     }
+
+    #titleSpan {
+        margin: 0;
+        padding: 0;
+    }
 `;
 
 const styleNav = `
+    h1 {
+        margin-top: 0;
+        margin-bottom: 0;
+        color: var(--themeDarkBlue);
+    }
+
+    #translateButton {
+        top: 0;
+        margin-left: calc(100% - 8vmin);
+        width: 7vmin;
+        margin-bottom: 1vmin;
+    }
+
+    .translateButtonImage {
+        width: 100%;
+        height: auto;
+        vertical-align: middle;
+        object-fit: contain;
+        left: 0;
+        top: 0;
+    }
+
     .nav ul {
         width: calc(100% - 40px);
         list-style-type: none;

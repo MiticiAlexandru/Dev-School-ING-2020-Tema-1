@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import {
     LitElement,
     html,
@@ -10,6 +11,7 @@ import './Articles/articlesDest.js';
 import './utils';
 import style from './Articles/articleStyle.js';
 import axios from 'axios';
+/* eslint-enable no-unused-vars */
 
 class DestComponent extends LitElement {
     static get styles() {
@@ -26,7 +28,7 @@ class DestComponent extends LitElement {
 
         <header>
             <navigation-element>
-                <h1 slot="title">Destinations</h1>
+                <span id="titleSpan" slot="title">Destinations</span>
             </navigation-element>
         </header>
 
@@ -39,26 +41,9 @@ class DestComponent extends LitElement {
             onClick="closeFullscreen()"></button>
         </div>
 
-        <div id="google_translate_element" hidden></div>
-
-        <script type="text/javascript">
-        function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-        }
-        </script>
-
-        <script type="text/javascript" src="../JS/f.js"></script>
-
         <footer>
             <my-footer></my-footer>
         </footer>
-
-        <script>
-            window.onload = () => {
-                var frame = document.querySelector("iframe");
-                frame.onload = changeLanguageInit(frame, true);
-            }
-        </script>
 
         </div>
         `;
