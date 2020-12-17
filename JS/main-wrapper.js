@@ -8,36 +8,35 @@ import {
 
 import './Articles/articlesHome.js';
 import './Articles/articlesDest.js';
+import './navigation';
+import './footer';
 import './utils';
 import style from './Articles/articleStyle.js';
 import axios from 'axios';
 /* eslint-enable no-unused-vars */
 
-class DestComponent extends LitElement {
+class MainWrapper extends LitElement {
     static get styles() {
         return css`${unsafeCSS(style.styleRoot)}`;
     }
 
     render() {
         return html`
-        <title-element>
-            <span id="titleSpan" slot="title">Destinations</span>
-        </title-element>
-
         <div id="main-root">
 
-        <art-container-dest id="grd">
+        <header>
+            <navigation-element></navigation-element>
+        </header>
+        
+        <slot></slot>
 
-        </art-container-dest>
-
-        <div id="imgFullscreenContainer">
-            <button id="imgFullscreenButton" class="imgFullscreenButtonClose"
-            onClick="closeFullscreen()"></button>
-        </div>
+        <footer>
+            <my-footer></my-footer>
+        </footer>
 
         </div>
         `;
     }
 }
 
-export default customElements.define('dest-component', DestComponent);
+export default customElements.define('main-wrapper', MainWrapper);

@@ -9,10 +9,12 @@ import {
 import './Articles/articlesHome.js';
 import './Articles/articlesDest.js';
 import './navigation';
+import './title';
 import './footer';
 import './utils';
 import style from './Articles/articleStyle.js';
 import axios from 'axios';
+import { request } from './lib';
 /* eslint-enable no-unused-vars */
 
 class MainComponent extends LitElement {
@@ -22,13 +24,11 @@ class MainComponent extends LitElement {
 
     render() {
         return html`
-        <div id="main-root">
+        <title-element>
+            <span id="titleSpan" slot="title">Home</span>
+        </title-element>
 
-        <header>
-            <navigation-element>
-                <span id="titleSpan" slot="title">Home</span>
-            </navigation-element>
-        </header>
+        <div id="main-root">
         
         <picture>
             <source media="(max-width:650px)" srcset="../img/title_1.jpg">
@@ -48,10 +48,6 @@ class MainComponent extends LitElement {
             <button id="imgFullscreenButton" class="imgFullscreenButtonClose"
             onClick="closeFullscreen()"></button>
         </div>
-
-        <footer>
-            <my-footer></my-footer>
-        </footer>
 
         </div>
         `;

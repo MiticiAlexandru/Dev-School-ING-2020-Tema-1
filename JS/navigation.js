@@ -7,6 +7,25 @@ import {
 
 import style from './Articles/articleStyle.js';
 
+const refTable = [
+    {
+        link: '/',
+        id: '#homeLink'
+    },
+    {
+        link: '/home',
+        id: '#homeLink'
+    },
+    {
+        link: '/destinations',
+        id: '#destinationsLink'
+    },
+    {
+        link: '/language',
+        id: '#languageLink'
+    }
+];
+
 class Navigation extends LitElement {
     static get styles() {
         return css`${unsafeCSS(style.styleNav)}`;
@@ -15,41 +34,30 @@ class Navigation extends LitElement {
     render() {
         return html`<div class="nav"><ul>
         <li>
-            <a href="./home">Home</a>
+            <a href="./home" id="homeLink">Home</a>
         </li>
         <li>
-            <a href="./destinations">Destinations</a>
+            <a href="./destinations" id="destinationsLink">Destinations</a>
         </li>
         <li>
-            <a href="./language">Languages</a>
+            <a href="./language" id="languageLink">Languages</a>
         </li>
-        </ul></div>
-
-        <h1>
-            <slot name="title"></slot>
-        </h1>
-
-        <button id="translateButton" @click="${this.clickTranslate}">
-            <img src="./img/translate_icon.png" class="translateButtonImage">
-        </button>`;
+        </ul></div>`;
     }
 
-    clickTranslate() {
-        // Check if we need to translate:
-        const lang = sessionStorage.lang;
-        if(lang) {
-            var select = document.getElementsByClassName('goog-te-combo')[0];
-            select.value = lang;
-
-            if ("createEvent" in document) {
-                var evt = document.createEvent("HTMLEvents");
-                evt.initEvent("change", false, true);
-                select.dispatchEvent(evt);
-            }
-            else {
-                select.fireEvent("onchange");
-            }
-        }
+    connectedCallback() {
+        super.connectedCallback();
+        window.addEventListener('vaadin-router-location-changed', () => {
+            window.sessionStorage.locationId = refTable.filter((v) => v.link == window.location.pathname)[0].id;
+            this.shadowRoot.querySelectorAll('a').forEach((listItem) => {
+                listItem.classList.remove('active');
+                listItem.classList.add('inactive');
+            });
+            this.shadowRoot.querySelector(window.sessionStorage.locationId).classList.remove('inactive');
+            this.shadowRoot.querySelector(window.sessionStorage.locationId).classList.add('active');
+        });
+        window.sessionStorage.locationId = refTable.filter((v) => v.link == window.location.pathname)[0].id;
+        this.shadowRoot.querySelector(window.sessionStorage.locationId).classList.add('active');
     }
 }
 

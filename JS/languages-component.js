@@ -17,13 +17,11 @@ class LangComponent extends LitElement {
 
     render() {
         return html`
-        <div id="main-root">
+        <title-element>
+            <span id="titleSpan" slot="title">Languages</span>
+        </title-element>
 
-        <header>
-            <navigation-element>
-                <span id="titleSpan" slot="title">Language</span>
-            </navigation-element>
-        </header>
+        <div id="main-root">
 
         <section id="grd">
             <div class="languageForm">
@@ -43,10 +41,6 @@ class LangComponent extends LitElement {
                 <button class="languageFormSubmit" @click="${this.handleSubmit}">Change</button>
             </div>
         </section>
-
-        <footer>
-            <my-footer></my-footer>
-        </footer>
 
         </div>
         `;

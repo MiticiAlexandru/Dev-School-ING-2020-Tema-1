@@ -190,7 +190,7 @@ const styleNav = `
         padding-left: 20px;
         padding-right: 20px;
         margin-top: 0;
-        margin-bottom: 1vh;
+        margin-bottom: 0;
     }
 
     .nav ul li a {
@@ -212,6 +212,25 @@ const styleNav = `
 
         border-radius: 12px;
         background-color: var(--gray3);
+    }
+
+    .inactive {
+        font-weight: normal;
+    }
+
+    .active {
+        font-weight: bold;
+    }
+
+    #title-container {
+        width: 100%;
+        text-align: center;
+        font-size: 2.5vw;
+
+        padding-top: 0;
+        padding-bottom: 0;
+
+        background-color: var(--main);
     }
     `;
 
