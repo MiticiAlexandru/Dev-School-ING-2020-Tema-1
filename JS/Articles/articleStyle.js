@@ -166,12 +166,23 @@ const styleNav = `
 
     #translateButton {
         top: 0;
-        margin-left: calc(100% - 8vmin);
+        margin-left: calc(100% - 18vmin);
         width: 7vmin;
         margin-bottom: 1vmin;
+        margin-right: 0;
+        margin-top: 0;
     }
 
-    .translateButtonImage {
+    #darkModeButton {
+        top: 0;
+        margin-left: 1vmin;
+        width: 7vmin;
+        margin-bottom: 1vmin;
+        margin-right: 0;
+        margin-top: 0;
+    }
+
+    .topButtonImage {
         width: 100%;
         height: auto;
         vertical-align: middle;

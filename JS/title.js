@@ -30,12 +30,12 @@ class Title extends LitElement {
                 <slot name="title"></slot>
             </h1>
 
-            <button @click="${this.changeTheme}">
-                Dark theme
+            <button id="darkModeButton" @click="${this.changeTheme}">
+                <img src="./img/dark_mode.png" class="topButtonImage">
             </button>
 
             <button id="translateButton" @click="${this.clickTranslate}">
-                <img src="./img/translate_icon.png" class="translateButtonImage">
+                <img src="./img/translate_icon.png" class="topButtonImage">
             </button>
         </div>`;
     }
