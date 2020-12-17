@@ -57,7 +57,7 @@ class Navigation extends LitElement {
             this.shadowRoot.querySelector(window.sessionStorage.locationId).classList.add('active');
         });
         window.sessionStorage.locationId = refTable.filter((v) => v.link == window.location.pathname)[0].id;
-        this.shadowRoot.querySelector(window.sessionStorage.locationId).classList.add('active');
+        setTimeout(() => {this.shadowRoot.querySelector(window.sessionStorage.locationId).classList.add('active')}, 0);
     }
 }
 
