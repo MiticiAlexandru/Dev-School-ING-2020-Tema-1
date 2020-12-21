@@ -30,37 +30,10 @@ class Title extends LitElement {
                 <slot name="title"></slot>
             </h1>
 
-            <button id="darkModeButton" @click="${this.changeTheme}">
-                <img src="./img/dark_mode.png" class="topButtonImage">
-            </button>
-
             <button id="translateButton" @click="${this.clickTranslate}">
                 <img src="./img/translate_icon.png" class="topButtonImage">
             </button>
         </div>`;
-    }
-
-    updated(changedProperties) {
-        if(changedProperties.has('theme')) {
-            this.updateTheme();
-        }
-    }
-
-    updateTheme() {
-        const themeStyle = document.createElement('link');
-        themeStyle.rel = 'stylesheet';
-        themeStyle.href = `${this.theme}.css`;
-        document.head.appendChild(themeStyle);
-        localStorage.setItem('theme', this.theme);
-        /*
-        document.head.style.setProperty('--main', 'rgb(0, 0, 0)');
-        document.head.style.setProperty('--grey-3', 'rgb(40, 40, 40)');
-        */
-    }
-
-    changeTheme() {
-        // eslint-disable-next-line no-constant-condition
-        this.theme = this.theme === 'dark' ? 'light' : 'dark';
     }
 
     clickTranslate() {

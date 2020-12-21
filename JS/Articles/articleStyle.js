@@ -30,6 +30,13 @@ const styleRoot = `
         background-attachment: fixed;
     }
 
+    @media (prefers-color-scheme: dark) {
+        #main-root {
+            --main: rgb(0, 0, 0);
+            --gray3: rgb(40, 40, 40);
+        }
+    }
+
     header {
         width: 100%;
         text-align: center;
@@ -166,16 +173,7 @@ const styleNav = `
 
     #translateButton {
         top: 0;
-        margin-left: calc(100% - 18vmin);
-        width: 7vmin;
-        margin-bottom: 1vmin;
-        margin-right: 0;
-        margin-top: 0;
-    }
-
-    #darkModeButton {
-        top: 0;
-        margin-left: 1vmin;
+        margin-left: calc(100% - 9vmin);
         width: 7vmin;
         margin-bottom: 1vmin;
         margin-right: 0;
