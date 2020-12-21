@@ -2,7 +2,7 @@ const HtmlPlugins = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-    entry: "./JS/main.js",
+    entry: "./src/JS/main.js",
     devServer: {
         historyApiFallback: true
     },
@@ -10,15 +10,15 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 {
-                    from: './css', to: 'css'
+                    from: '.src/css', to: 'css'
                 },
                 {
-                    from: './img', to: 'img'
+                    from: '.src/img', to: 'img'
                 }
             ]
         }),
         new HtmlPlugins({
-            template: "./HTML/home.html"
+            template: "./index.html"
         })
     ]
 };
